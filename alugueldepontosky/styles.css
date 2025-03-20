@@ -1,0 +1,212 @@
+/* Variáveis de cores */
+:root {
+    --sky-red: #e31c1c;
+    --sky-dark-red: #c41818;
+    --sky-blue: #0066cc;
+    --sky-dark-blue: #004c99;
+    --whatsapp-green: #25D366;
+}
+
+/* Reset e estilos base */
+body {
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+
+/* Aviso no topo */
+.bg-sky-600 {
+    background-color: var(--sky-blue);
+    font-weight: 500;
+}
+
+/* Header */
+header {
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.95);
+}
+
+/* Animações para os cards de benefícios */
+ul li {
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+    box-shadow: 0 4px 15px rgba(227, 28, 28, 0.2);
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Delay para cada item da lista */
+ul li:nth-child(1) { animation-delay: 0.1s; }
+ul li:nth-child(2) { animation-delay: 0.2s; }
+ul li:nth-child(3) { animation-delay: 0.3s; }
+ul li:nth-child(4) { animation-delay: 0.4s; }
+ul li:nth-child(5) { animation-delay: 0.5s; }
+ul li:nth-child(6) { animation-delay: 0.6s; }
+
+/* Hover effects nos cards */
+ul li {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+ul li:hover {
+    transform: translateX(10px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(227, 28, 28, 0.3);
+    background-color: var(--sky-dark-red);
+}
+
+/* Estilização do preço */
+.price-tag {
+    background: linear-gradient(135deg, var(--sky-red) 0%, var(--sky-dark-red) 100%);
+    box-shadow: 0 8px 25px rgba(227, 28, 28, 0.3);
+    animation: float 3s ease-in-out infinite;
+    border: 3px solid rgba(255,255,255,0.1);
+}
+
+@keyframes float {
+    0%, 100% { transform: rotate(-6deg) translateY(0); }
+    50% { transform: rotate(-6deg) translateY(-10px); }
+}
+
+/* Botão de ação principal */
+.bg-red-600.rounded-full {
+    background: linear-gradient(45deg, var(--sky-red), var(--sky-dark-red));
+    box-shadow: 0 4px 15px rgba(227, 28, 28, 0.3);
+    border: 2px solid rgba(255,255,255,0.1);
+    animation: pulse 2s infinite;
+}
+
+.bg-red-600.rounded-full:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(227, 28, 28, 0.4);
+    background: linear-gradient(45deg, var(--sky-dark-red), var(--sky-red));
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(227, 28, 28, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(227, 28, 28, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(227, 28, 28, 0); }
+}
+
+/* Seção de informações */
+.bg-red-600.text-white {
+    background: linear-gradient(135deg, var(--sky-red) 0%, var(--sky-dark-red) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-red-600.text-white::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+    z-index: 1;
+}
+
+/* Cards na seção vermelha */
+.bg-red-700 {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* WhatsApp flutuante */
+.fixed.bottom-8.right-8 {
+    background-color: var(--whatsapp-green);
+    animation: bounce 2s infinite;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.fixed.bottom-8.right-8:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Melhorias nos ícones */
+.fa-check-circle {
+    color: #fff;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+/* Efeito de brilho nos logos */
+img {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+img:hover {
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2)) brightness(1.1);
+    transform: scale(1.05);
+}
+
+/* Melhorias na tipografia */
+h2, .text-2xl {
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.text-lg {
+    line-height: 1.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    ul li {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .text-5xl {
+        font-size: 2.5rem;
+    }
+    
+    .price-tag {
+        transform: none !important;
+    }
+}
+
+/* Efeito de gradiente suave no fundo */
+.bg-gradient-to-b {
+    background-size: 200% 200%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Efeito de hover nos ícones */
+.fas, .fab {
+    transition: all 0.3s ease;
+}
+
+.fas:hover, .fab:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
